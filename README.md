@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+NASA Image of the Day App
 
-## Getting Started
+Este es un proyecto de una aplicación web construida con React, Next.js, y Vercel que muestra la imagen del día proporcionada por la API de la NASA (APOD - Astronomy Picture of the Day). La aplicación permite ver la imagen del día actual o seleccionar una fecha específica para obtener la imagen asociada a esa fecha.
 
-First, run the development server:
+Características
 
-```bash
+    Imagen del día de la NASA: Muestra la imagen del día junto con su título, descripción, y autor (si disponible).
+    Selección de fecha: Permite al usuario seleccionar una fecha y ver la imagen correspondiente de esa fecha en particular.
+    Uso de API de la NASA: La aplicación interactúa con la API pública de la NASA para obtener las imágenes y datos asociados.
+
+Tecnologías Utilizadas
+
+    React: Biblioteca principal para construir la interfaz de usuario.
+    Next.js: Framework de React para la construcción de aplicaciones web optimizadas.
+    TailwindCSS: Framework de CSS para un diseño rápido y responsivo.
+    TypeScript: Superset de JavaScript para una mayor robustez en el código.
+    Vercel: Plataforma para despliegue continuo de aplicaciones.
+
+Instalación
+
+    Clona este repositorio:
+
+git clone https://github.com/Kenkyoo/react-app-Nasa.git
+cd react-app-Nasa
+
+    Instala las dependencias:
+
+npm install
+
+    Ejecuta el servidor de desarrollo:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación estará disponible en http://localhost:3000.
+Uso
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+La aplicación se carga con la imagen del día de la NASA. Puedes seleccionar una fecha desde el campo de selección para obtener la imagen correspondiente a esa fecha.
+Ejemplo de Uso
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    Al cargar la página, la aplicación automáticamente mostrará la imagen del día.
+    Utiliza el selector de fecha para elegir una fecha específica, y la imagen para esa fecha se actualizará automáticamente.
 
-## Learn More
+API de la NASA
 
-To learn more about Next.js, take a look at the following resources:
+Este proyecto utiliza la API pública de la NASA para obtener la imagen del día y sus detalles. Se hace una solicitud a la siguiente URL:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+https://api.nasa.gov/planetary/apod?date={fecha}&api_key={tu_api_key}
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Nota: Necesitarás una clave API de la NASA, la cual puedes obtener gratuitamente registrándote en https://api.nasa.gov.
 
-## Deploy on Vercel
+Archivos Importantes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    pages/index.tsx: Contiene la lógica principal de la aplicación, incluyendo la obtención de los datos de la API de la NASA y la visualización de la imagen.
+    components/select.tsx: Componente que permite seleccionar la fecha para obtener la imagen correspondiente.
+    components/image.tsx: Componente que muestra la imagen y sus detalles (título, descripción, autor, etc.).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contribuciones
+
+Si deseas contribuir, por favor sigue estos pasos:
+
+    Realiza un fork del proyecto.
+    Crea una nueva rama para tu contribución (git checkout -b feature/nueva-funcionalidad).
+    Realiza tus cambios y haz un commit (git commit -am 'Agrega nueva funcionalidad').
+    Haz push a la rama (git push origin feature/nueva-funcionalidad).
+    Abre un pull request.
+
+Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
