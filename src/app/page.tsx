@@ -1,5 +1,17 @@
 "use client"
 
+type PostData = {
+  title: string;
+  msg: string;
+  url: string;
+  explanation: string;
+  date: string;
+  copyright: string; // Es opcional porque puede no existir en algunos casos
+  hdurl?: string;     // También opcional
+  media_type: string;
+};
+
+
 import { useState, useEffect } from "react";
 import Select from "./components/select";
 import ImageCard from "./components/image";
@@ -7,7 +19,7 @@ import ImageCard from "./components/image";
 export default function Home() {
 
   const [date, setDate] = useState('');
-  const [post, setPost] = useState(null)
+  const [post, setPost] = useState<PostData | null>(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -21,7 +33,7 @@ export default function Home() {
  
   if (!post) return <div>Loading...</div>
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
     const selectedDate = e.target.value;
     const MIN_DATE = "1995-06-16"; 

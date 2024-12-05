@@ -1,6 +1,17 @@
 import ModalImage from "react-modal-image";
 
-export default function ImageCard({title, url, description, date, author, hdurl, type}) {
+type ImageCardProps = {
+  title: string;
+  url: string;
+  description: string;
+  date: string;
+  author: string;
+  hdurl?: string;
+  type: string;
+};
+
+
+export default function ImageCard({title, url, description, date, author, hdurl, type} : ImageCardProps) {
     return (
     <div className="max-w-screen-lg mx-auto p-5 sm:p-10 md:p-16">
         <div className="mb-10 rounded overflow-hidden flex flex-col mx-auto">
@@ -44,7 +55,6 @@ export default function ImageCard({title, url, description, date, author, hdurl,
                 x="0px"
                 y="0px"
                 viewBox="0 0 512 512"
-                style={{ enableBackground: "new 0 0 512 512" }}
                 xmlSpace="preserve"
               >
                 <g>
